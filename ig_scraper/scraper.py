@@ -33,7 +33,6 @@ def download_image_to_s3(img_url, bucket_name, s3_path):
 
 def fetch_influencer_data(username):
     try:
-        time.sleep(15)
         L = instaloader.Instaloader()
 
         L.login(ig_username, password)
@@ -47,6 +46,7 @@ def fetch_influencer_data(username):
 
         posts = profile.get_posts()
         for post in posts:
+            time.sleep(5)
             s3_path = f"influencers/{username}/posts/{post.shortcode}.jpg"
             media_url = download_image_to_s3(post.url, settings.AWS_STORAGE_BUCKET_NAME, s3_path)
             
@@ -64,6 +64,7 @@ def fetch_influencer_data(username):
 
         stories = L.get_stories(userids=[profile.userid])
         for story in stories:
+            time.sleep(5)
             items = story.get_items()
             for item in items:
                 s3_path = f"influencers/{username}/stories/{item.mediaid}.jpg"
