@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Influencer</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add</button>
+    </form>
+    <a href="{% url 'influencer_list' %}">Back to list</a>
+</body>
+</html>

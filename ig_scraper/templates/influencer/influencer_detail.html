@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>{{ influencer.username }} - Details</title>
+</head>
+<body>
+    <h1>{{ influencer.username }} - {{ influencer.full_name }}</h1>
+    <h2>Posts</h2>
+    <ul>
+    {% for post in posts %}
+        <li>
+            <img src="{{ post.media_url }}" alt="Post image" width="100">
+            <p>{{ post.caption }}</p>
+            <p>Likes: {{ post.like_count }}, Comments: {{ post.comment_count }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+    <h2>Stories</h2>
+    <ul>
+    {% for story in stories %}
+        <li>
+            <img src="{{ story.media_url }}" alt="Story image" width="100">
+            <p>Posted at: {{ story.created_at }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'influencer_list' %}">Back to list</a>
+</body>
+</html>

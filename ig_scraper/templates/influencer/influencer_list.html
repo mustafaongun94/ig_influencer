@@ -1,0 +1,25 @@
+<!-- influencer/templates/influencer/influencer_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Influencer List</title>
+</head>
+<body>
+    <h1>Influencer List</h1>
+    {% if influencers|length < 20 %}
+        <a href="{% url 'influencer_add' %}">Add Influencer</a>
+    {% endif %}
+    <ul>
+    {% for influencer in influencers %}
+        <li>
+            <a href="{% url 'influencer_detail' influencer.pk %}">{{ influencer.username }}</a>
+            - {{ influencer.full_name }}
+            <form method="post" action="{% url 'influencer_delete' influencer.pk %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
