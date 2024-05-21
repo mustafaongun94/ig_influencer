@@ -8,7 +8,14 @@
     <ul>
     {% for post in posts %}
         <li>
+            {% if post.is_video %}
+            <video width="320" height="240" controls>
+                <source src="{{ post.media_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            {% else %}
             <img src="{{ post.media_url }}" alt="Post image" width="100">
+            {% endif %}
             <p>{{ post.caption }}</p>
             <p>Likes: {{ post.like_count }}, Comments: {{ post.comment_count }}</p>
         </li>
@@ -18,7 +25,14 @@
     <ul>
     {% for story in stories %}
         <li>
+            {% if story.is_video %}
+            <video width="320" height="240" controls>
+                <source src="{{ story.media_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            {% else %}
             <img src="{{ story.media_url }}" alt="Story image" width="100">
+            {% endif %}
             <p>Posted at: {{ story.created_at }}</p>
         </li>
     {% endfor %}
