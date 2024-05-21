@@ -16,6 +16,7 @@ class Post(models.Model):
     like_count = models.IntegerField()
     comment_count = models.IntegerField()
     created_at = models.DateTimeField()
+    is_video = models.BooleanField(default=False)
 
     def __str__(self):
         return self.post_id
@@ -26,6 +27,7 @@ class Story(models.Model):
     story_id = models.CharField(max_length = 100, unique = True)
     media_url = models.URLField(max_length = 500)
     created_at = models.DateTimeField()
+    is_video = models.BooleanField(default=False)
 
     def __str__(self):
         return self.story_id
