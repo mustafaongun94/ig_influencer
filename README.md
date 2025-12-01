@@ -8,8 +8,8 @@
 
    ```bash
    psql -U postgres
-   CREATE USER hyperiser WITH SUPERUSER PASSWORD 'hyperiser';
-   CREATE DATABASE hyperiser;
+   CREATE USER iginfluencer WITH SUPERUSER PASSWORD 'iginfluencer';
+   CREATE DATABASE iginfluencer;
 
 2. **Gerekli Paketlerin Yüklenmesi**:
 
