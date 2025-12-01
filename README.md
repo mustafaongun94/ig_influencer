@@ -4,7 +4,7 @@
 
 1. **PostgreSQL Ayarları**:
 
-   Komut satırını yönetici olarak çalıştırarak PostgreSQL'e bağlantı gerçekleştirin ve `hyperiser` isminde bir Superuser ve `hyperiser` isminde bir Database oluşturun.
+   Komut satırını yönetici olarak çalıştırarak PostgreSQL'e bağlantı gerçekleştirin ve `iginfluencer` isminde bir Superuser ve `iginfluencer` isminde bir Database oluşturun.
 
    ```bash
    psql -U postgres
